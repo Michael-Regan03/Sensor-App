@@ -2,7 +2,7 @@ import serial
 import requests
 import time
 
-ser = serial.Serial('COM5', 9600)  # COM port for Windows
+ser = serial.Serial('/dev/ttyUSB0', 9600)  # port for pi
 
 API_URL = 'http://127.0.0.1:8000/api/sensorData/'  # Server's API URL
 
@@ -28,4 +28,4 @@ while True:
     except ValueError:
         print("Invalid data format:", data)
 
-    time.sleep(5)  # Delay before reading next data
+    time.sleep(5)  # Delay before reading the next data

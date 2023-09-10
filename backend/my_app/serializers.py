@@ -1,13 +1,8 @@
 from rest_framework import serializers
-from .models import DataItem , pH_value
+from .models import  SensorData
 
-class DataItemSerializer(serializers.ModelSerializer):
+class SensorDataSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DataItem
-        fields = ['statistic', 'value', 'timestamp']
-
-class pH_valueSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = pH_value
-        fields = ['value', 'timestamp']
+        model = SensorData
+        fields = ['temperature','tds_value','pH_value', 'timestamp']
 
